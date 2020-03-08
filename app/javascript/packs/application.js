@@ -4,3 +4,4 @@ require("channels")
 
 import "./flashMessages"
 import "../src/application.css"
+import "./modal"

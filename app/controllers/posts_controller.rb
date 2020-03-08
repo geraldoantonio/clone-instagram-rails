@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
-# PostController Documentation
+# app/controllers/posts_controller.rb
 class PostsController < ApplicationController
+  include SuggestedUsers
+
   before_action :set_post, only: %i[show]
+  before_action :set_suggested_users, only: :index
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def show; end
@@ -15,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params.merge(created_by: current_user))
     if @post.save
       redirect_to @post, notice: 'Post criado com sucesso.'
     else
