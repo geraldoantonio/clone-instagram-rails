@@ -14,7 +14,9 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'image_processing', '~> 1.2'
 
+gem 'active_storage_validations'
 gem 'devise', '~> 4.7'
 gem 'devise-i18n', '~> 1.9'
 gem 'rails-i18n', '~> 6.0'
