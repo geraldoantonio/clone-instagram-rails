@@ -20,6 +20,7 @@ gem 'active_storage_validations'
 gem 'devise', '~> 4.7'
 gem 'devise-i18n', '~> 1.9'
 gem 'rails-i18n', '~> 6.0'
+gem 'redis'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
