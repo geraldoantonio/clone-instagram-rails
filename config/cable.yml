@@ -1,5 +1,7 @@
 development:
-  adapter: async
+  adapter: redis
+  url: "redis://localhost:6379/1"
+  channel_prefix: clone_instagram_rails_development
 
 test:
   adapter: test

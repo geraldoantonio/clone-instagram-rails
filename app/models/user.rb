@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# app/models/user.rb
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -8,4 +9,9 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
 
   has_many :posts, foreign_key: :created_by_id, dependent: :destroy
+  has_many :likes
+  has_many :comments
+
+  has_one_attached :avatar
+  validates :avatar, content_type: %i[png jpg jpeg]
 end

@@ -3,6 +3,11 @@
         local: true, class: "edit-profile" do |form| %>
     <h1>Editar perfil</h1>
 
+    <%= image_tag(current_user.avatar, class: "photo") if current_user.avatar.attached? %>
+    <div class="field">
+      <%= form.file_field :avatar %>
+    </div>
+
     <div class="field">
       <%= form.text_field :name, placeholder: "Nome" %>
     </div>
